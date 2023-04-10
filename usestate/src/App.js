@@ -1,5 +1,6 @@
 import React,{ useState } from 'react';
 import './App.css'
+import Card from './Card';
 
 function App() {
 const [count, setCount] = useState(5);
@@ -15,6 +16,28 @@ const increase = () =>{
   setTheme('yellow')
 }
 
+const expenses = [
+    {
+      id: "e1",
+      ime: "Davud",
+      prezime:"Carovac",
+      amount: 94.12,
+      date: new Date(2020, 7, 14),
+    },
+    {
+      id: "e3",
+      ime: "Davud",
+      prezime:"Carovac",      
+      date: new Date(2021, 2, 28),
+    },
+    {
+      id: "e4",
+      ime: "Davud",
+      prezime:"Carovac",      
+      date: new Date(2021, 5, 12),
+    },
+  ];
+
 return (
   <>
     <div className="main">
@@ -22,6 +45,9 @@ return (
       <span>{count}</span>
       <span>{theme}</span>
       <button onClick={increase}>+</button>
+    </div>
+    <div className='card1'>
+      <Card ime={expenses[0].ime} prezime={expenses[0].prezime} />
     </div>
   </>
 );

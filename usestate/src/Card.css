@@ -1,0 +1,10 @@
+.kartica{
+    border: 2px solid black;
+    padding: 40px;
+}
+
+.card1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
