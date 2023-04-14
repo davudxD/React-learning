@@ -3,8 +3,8 @@ import "./App.css";
 
 function App() {
   const [showFinalResults, setFinalResults] = useState(false);
-  const[score, setScore] = useState(0);
-  const[currentQuestion, setCurrentQuestion] = useState(0);
+  const [score, setScore] = useState(0);
+  const [currentQuestion, setCurrentQuestion] = useState(0);
 
   const questions = [
     {
@@ -54,12 +54,22 @@ function App() {
     },
   ];
 
-  const optionClicked = (opt) =>{
-if(opt){
-  setScore(score + 1);
-}
-setCurrentQuestion(currentQuestion + 1);
-  }
+  const optionClicked = (opt) => {
+    if (opt) {
+      setScore(score + 1);
+    }
+    if (currentQuestion + 1 < questions.length) {
+      setCurrentQuestion(currentQuestion + 1);
+    } else {
+      setFinalResults(true);
+    }
+  };
+
+  const restartGame = () => {
+    setScore(0);
+    setFinalResults(false);
+    setCurrentQuestion(0);
+  };
 
   return (
     <div className="App">
@@ -68,20 +78,29 @@ setCurrentQuestion(currentQuestion + 1);
       {showFinalResults ? (
         <div className="final-result">
           <h1>Final result</h1>
-          <h2>1 out of 5 correct - (20%)</h2>
-          <button>Restart Game</button>
+          <h2>
+            {score} out of {questions.length} correct -{" "}
+            {(score / questions.length) * 100}%
+          </h2>
+          <button onClick={() => restartGame()}>Restart Game</button>
         </div>
       ) : (
         <div className="question-card">
-          <h2>Question {currentQuestion + 1} of {questions.length}</h2>
+          <h2>
+            Question {currentQuestion + 1} of {questions.length}
+          </h2>
           <h3 className="question-text">{questions[currentQuestion].text}</h3>
 
           <ul>
             {questions[currentQuestion].options.map((option) => {
-              return(
-                <li onClick={() => optionClicked(option.isCorrect)}
-                key={option.id} >{option.text}</li>
-              )
+              return (
+                <li
+                  onClick={() => optionClicked(option.isCorrect)}
+                  key={option.id}
+                >
+                  {option.text}
+                </li>
+              );
             })}
           </ul>
         </div>
