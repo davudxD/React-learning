@@ -1,3 +1,15 @@
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+ 
+ *{
+ font-family: 'Poppins', sans-serif;
+
+}
+
+body{
+  padding: 0;
+  margin: 0;
+  background-color: #3d64e6;}
+
 .App {
   text-align: center;
 }
@@ -8,10 +20,10 @@
 
   /* Dimensions  */
   width: 80%; /* Can be in percentage also. */
-  height: auto;
+  height: 600px;
 
   /* Visual  */
-  background-color: gray;
+  background-color: #fff;
   padding: 16px;
   border-radius: 16px;
   color: white;
@@ -27,6 +39,7 @@ li {
   margin-top: 8px;
   background-color: darkgray;
   padding: 16px;
+  font-weight: bold;
   border: 3px solid white;
   border-radius: 20px;
   font-size: 20px;
@@ -35,6 +48,7 @@ li {
 .question-text {
   color: darkblue;
   font-size: 24px;
+  margin-bottom: 60px;
 }
 
 /* Final Results  */

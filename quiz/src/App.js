@@ -8,48 +8,53 @@ function App() {
 
   const questions = [
     {
-      text: "What is the capital of America?",
+      text: "How many goals were scored at the 2022 Qatar FIFA World Cup?",
       options: [
-        { id: 0, text: "New York City", isCorrect: false },
-        { id: 1, text: "Boston", isCorrect: false },
-        { id: 2, text: "Santa Fe", isCorrect: false },
-        { id: 3, text: "Washington DC", isCorrect: true },
+        { id: 0, text: "157", isCorrect: false },
+        { id: 1, text: "160", isCorrect: false },
+        { id: 2, text: "143", isCorrect: false },
+        { id: 3, text: "172", isCorrect: true },
+        { id: 4, text: "184", isCorrect: false },
       ],
     },
     {
-      text: "What year was the Constitution of America written?",
+      text: "Who holds the record for most UEFA Champions League goals of all time?",
       options: [
-        { id: 0, text: "1787", isCorrect: true },
-        { id: 1, text: "1776", isCorrect: false },
-        { id: 2, text: "1774", isCorrect: false },
-        { id: 3, text: "1826", isCorrect: false },
+        { id: 0, text: "Lionel Messi", isCorrect: false },
+        { id: 1, text: "Karim Benzema", isCorrect: false },
+        { id: 2, text: "Cristiano Ronaldo", isCorrect: true },
+        { id: 3, text: "Robert Lewandowski", isCorrect: false },
+        { id: 4, text: "Raul", isCorrect: false },
       ],
     },
     {
-      text: "Who was the second president of the US?",
+      text: "Who is the most capped Germany International of all time?",
       options: [
-        { id: 0, text: "John Adams", isCorrect: true },
-        { id: 1, text: "Paul Revere", isCorrect: false },
-        { id: 2, text: "Thomas Jefferson", isCorrect: false },
-        { id: 3, text: "Benjamin Franklin", isCorrect: false },
+        { id: 0, text: "Franz Beckenbauer", isCorrect: false },
+        { id: 1, text: "Lothar Matthaus", isCorrect: true },
+        { id: 2, text: "Philpp Lahm", isCorrect: false },
+        { id: 3, text: "Manuel Neuer", isCorrect: false },
+        { id: 4, text: "Miroslav Klose", isCorrect: false },
       ],
     },
     {
-      text: "What is the largest state in the US?",
+      text: "Who was the best football player in Europe in 1998?",
       options: [
-        { id: 0, text: "California", isCorrect: false },
-        { id: 1, text: "Alaska", isCorrect: true },
-        { id: 2, text: "Texas", isCorrect: false },
-        { id: 3, text: "Montana", isCorrect: false },
+        { id: 0, text: "Thierry Henry", isCorrect: false },
+        { id: 1, text: "Rivaldo", isCorrect: false },
+        { id: 2, text: "Ronaldo Nazario", isCorrect: false },
+        { id: 3, text: "Michael Owen", isCorrect: false },
+        { id: 4, text: "Zinedine Zidane", isCorrect: true },
       ],
     },
     {
-      text: "Which of the following countries DO NOT border the US?",
+      text: "Which country hosted the 2006 FIFA World Cup?",
       options: [
-        { id: 0, text: "Canada", isCorrect: false },
-        { id: 1, text: "Russia", isCorrect: true },
-        { id: 2, text: "Cuba", isCorrect: true },
-        { id: 3, text: "Mexico", isCorrect: false },
+        { id: 0, text: "Germany", isCorrect: true },
+        { id: 1, text: "England", isCorrect: false },
+        { id: 2, text: "Netherlands", isCorrect: false },
+        { id: 3, text: "Korea", isCorrect: false },
+        { id: 4, text: "South Africa", isCorrect: false },
       ],
     },
   ];
@@ -73,7 +78,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Usa Quiz</h1>
+      <h1 style={{fontWeight:'bold'}}>Football Quiz</h1>
       <h2>Current score {score}</h2>
       {showFinalResults ? (
         <div className="final-result">
