@@ -6,6 +6,8 @@ function App() {
   const [score, setScore] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState(0);
 
+
+
   const questions = [
     {
       text: "How many goals were scored at the 2022 Qatar FIFA World Cup?",
@@ -62,13 +64,18 @@ function App() {
   const optionClicked = (opt) => {
     if (opt) {
       setScore(score + 1);
+      
     }
     if (currentQuestion + 1 < questions.length) {
       setCurrentQuestion(currentQuestion + 1);
+     
     } else {
       setFinalResults(true);
+      
     }
   };
+
+
 
   const restartGame = () => {
     setScore(0);
@@ -78,12 +85,12 @@ function App() {
 
   return (
     <div className="App">
-      <h1 style={{fontWeight:'bold'}}>Football Quiz</h1>
-      <h2>Current score {score}</h2>
+      <h1 style={{ fontWeight: "bold", color: "white" }}>Football Quiz</h1>
+
       {showFinalResults ? (
         <div className="final-result">
-          <h1>Final result</h1>
-          <h2>
+          <h1 style={{color:"green"}}>Final result</h1>
+          <h2 style={{color:"white"}}>
             {score} out of {questions.length} correct -{" "}
             {(score / questions.length) * 100}%
           </h2>
@@ -91,7 +98,7 @@ function App() {
         </div>
       ) : (
         <div className="question-card">
-          <h2>
+          <h2 style={{ color: "white" }}>
             Question {currentQuestion + 1} of {questions.length}
           </h2>
           <h3 className="question-text">{questions[currentQuestion].text}</h3>

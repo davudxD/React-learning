@@ -8,21 +8,22 @@
 body{
   padding: 0;
   margin: 0;
-  background-color: #3d64e6;}
+  background-color: #3d64e6;
+}
 
 .App {
   text-align: center;
 }
 
 .question-card {
-  /* Center the div  */
+  
   margin: 0 auto;
 
-  /* Dimensions  */
-  width: 80%; /* Can be in percentage also. */
+  
+  width: 80%; 
   height: 600px;
 
-  /* Visual  */
+
   background-color: #fff;
   padding: 16px;
   border-radius: 16px;
@@ -37,12 +38,13 @@ ul {
 
 li {
   margin-top: 8px;
-  background-color: darkgray;
+  background-color: #3d64e6;
   padding: 16px;
   font-weight: bold;
   border: 3px solid white;
   border-radius: 20px;
   font-size: 20px;
+  cursor: default;
 }
 
 .question-text {
@@ -51,20 +53,18 @@ li {
   margin-bottom: 60px;
 }
 
-/* Final Results  */
 
 .final-results {
-  /* Center the div  */
   margin: 0 auto;
 
-  /* Dimensions  */
-  width: 50%; /* Can be in percentage also. */
-  height: auto;
-  margin-top: 64px;
 
-  /* Visual  */
+  width: 50%; 
+  height: auto;
+
+
   background-color: gray;
   padding: 16px;
+  border: 2px solid white;
   border-radius: 16px;
   color: white;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
@@ -72,15 +72,15 @@ li {
 }
 
 button {
-  background-color: red; /* Green */
+  background-color: white; 
   border: none;
-  color: white;
+  color: #3d64e6;
   padding: 16px 24px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
-
+  
   border-radius: 24px;
 }
