@@ -89,10 +89,10 @@ function App() {
 
       {showFinalResults ? (
         <div className="final-result">
-          <h1 style={{color:"green"}}>Final result</h1>
-          <h2 style={{color:"white"}}>
+          <h1 style={{ color: "green" }}>Final result</h1>
+          <h2 style={{ color: "white" }}>
             {score} out of {questions.length} correct -{" "}
-            {(score / questions.length) * 100}%
+            <span> {(score / questions.length) * 100}%</span>
           </h2>
           <button onClick={() => restartGame()}>Restart Game</button>
         </div>
