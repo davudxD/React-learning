@@ -9,10 +9,19 @@ const AddUser = (props) => {
 
   const addUserHandler = (event) => {
     event.preventDefault();
+
+    // Ako su inputi prazni
+    if (enteredUserName.trim().length === 0 || enteredAge.trim().length === 0) {
+      return;
+    }
+    if (+enteredAge < 1) {
+      return;
+    }
     console.log(enteredUserName, enteredAge);
     setEnteredUserName(""); // Brisanje vrednosti iz inputa nakon submitanja forme
     setEnteredAge(""); // Brisanje vrednosti iz inputa nakon submitanja forme
   };
+
   const usernameChangeHandler = (event) => {
     setEnteredUserName(event.target.value);
   };
