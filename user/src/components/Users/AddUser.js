@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import Button from "../UI/Button";
 import Card from "../UI/Card";
+
 import classes from "./AddUser.module.css";
-import UsersList from "./UsersList";
+
 
 const AddUser = (props) => {
   const [enteredUserName, setEnteredUserName] = useState("");
@@ -18,7 +19,7 @@ const AddUser = (props) => {
     if (+enteredAge < 1) {
       return;
     }
-    console.log(enteredUserName, enteredAge);
+    props.onAddUser(enteredUserName, enteredAge);
     setEnteredUserName(""); // Brisanje vrednosti iz inputa nakon submitovanja forme
     setEnteredAge(""); // Brisanje vrednosti iz inputa nakon submitovanja forme
   };
