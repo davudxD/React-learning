@@ -23,6 +23,8 @@ function App() {
     });
   };
 
+  console.log(usersList)
+
   return (
     <div>
       <AddUser onAddUser={addUserHandler} />
