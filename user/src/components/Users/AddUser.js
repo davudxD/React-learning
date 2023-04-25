@@ -10,8 +10,6 @@ const AddUser = (props) => {
   const nameInputRef = useRef();
   const ageInputRef = useRef();
 
-  const [enteredUserName, setEnteredUserName] = useState("");
-  const [enteredAge, setEnteredAge] = useState("");
   const [error, setError] = useState();
 
   const addUserHandler = (event) => {
@@ -35,17 +33,10 @@ const AddUser = (props) => {
       return;
     }
     props.onAddUser(enteredName, enteredUserAge);
-    setEnteredUserName(""); // Brisanje vrednosti iz inputa nakon submitovanja forme
-    setEnteredAge(""); // Brisanje vrednosti iz inputa nakon submitovanja forme
+   nameInputRef.current.value = "";
+   ageInputRef.current.value = ""; 
   };
 
-  const usernameChangeHandler = (event) => {
-    setEnteredUserName(event.target.value);
-  };
-
-  const ageChangeHandler = (event) => {
-    setEnteredAge(event.target.value);
-  };
 
   const errorHandler = () => {
     setError(null); // Moze i false umesto null
@@ -67,16 +58,14 @@ const AddUser = (props) => {
           <input
             id="username"
             type="text"
-            value={enteredUserName}
-            onChange={usernameChangeHandler}
+       
             ref={nameInputRef}
           />
           <label htmlFor="age">Age (Years)</label>
           <input
             id="age"
             type="number"
-            value={enteredAge}
-            onChange={ageChangeHandler}
+        
             ref={ageInputRef}
           />
           <Button type="submit">Add User</Button>
