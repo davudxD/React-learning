@@ -6,11 +6,13 @@ import Button from "./Button";
 import classes from "./ErrorModal.module.css"
 
 const Backdrop = props =>{
+  console.log(props.onConfirm)
    return <div className={classes.backdrop} onClick={props.onConfirm} />;
 
 }
 
 const ModalOverlay = props =>{
+
   return (
     <Card className={classes.modal}>
       <header className={classes.header}>
@@ -25,6 +27,8 @@ const ModalOverlay = props =>{
     </Card>
   );
 }
+
+
 
 const ErrorModal = (props) => {
 
