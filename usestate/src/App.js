@@ -12,8 +12,9 @@ const decrease = () =>{
 }
 
 
-let test = 'test';
+let test = 'test123';
 console.log(test)
+
 
 const increase = () =>{
   setCount(count + 1)
