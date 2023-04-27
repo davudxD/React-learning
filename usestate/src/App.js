@@ -11,6 +11,10 @@ const decrease = () =>{
 
 }
 
+
+let test = 'test';
+console.log(test)
+
 const increase = () =>{
   setCount(count + 1)
   setTheme('yellow')
