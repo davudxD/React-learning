@@ -13,6 +13,9 @@ function App() {
     setIsLoggedIn(true);
   };
 
+let test = 'test';
+console.log(test)
+
   const logoutHandler = () => {
     setIsLoggedIn(false);
   };
