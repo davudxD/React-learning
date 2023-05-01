@@ -11,16 +11,22 @@ const Login = (props) => {
   const [passwordIsValid, setPasswordIsValid] = useState();
   const [formIsValid, setFormIsValid] = useState(false);
 
-  useEffect(()=>{
+useEffect(() => {
+  console.log('EFFECT RUNNING'); // // Runnuje se odmah na pocetku cim se komponenta renderuje i nakon svake promene u enteredPassword.
+  return () => {
+    console.log('EFFECT CLEANUP'); // Runnuje se nakon svake promene u enteredPassword;
+  }
+},[enteredPassword])
 
+  useEffect(()=>{
     const identifier = setTimeout(() => {    
-      console.log('hi')
+      console.log('hi'); // Runnuje se odmah na pocetku cim se komponenta renderuje i nakon svake promene u enteredPassword i enteredEmail.
       setFormIsValid(
       enteredEmail.includes('@') && enteredPassword.trim().length > 6
     );}, 500)
 
     return () => {
-      console.log("Clean Up");
+      console.log("Clean Up"); // Runnuje se nakon svake promene u enteredPassword i enteredEmail.
       clearTimeout(identifier);
     }
 

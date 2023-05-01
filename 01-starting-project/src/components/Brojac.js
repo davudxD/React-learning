@@ -5,7 +5,7 @@ const MyComponent = () => {
 
     useEffect(() => {
         // Ova funkcija će se izvršiti nakon svakog renderovanja komponente
-        console.log('Brojač se promijenio!');
+        // console.log('Brojač se promenio!');
     }, [count]); // useEffect će se izvršiti samo ako se 'count' promeni
 
     return (
