@@ -18,25 +18,26 @@ useEffect(() => {
   }
 },[enteredPassword])
 
-  useEffect(()=>{
-    const identifier = setTimeout(() => {    
-      console.log('hi'); // Runnuje se odmah na pocetku cim se komponenta renderuje i nakon svake promene u enteredPassword i enteredEmail.
-      setFormIsValid(
-      enteredEmail.includes('@') && enteredPassword.trim().length > 6
-    );}, 500)
+  // useEffect(()=>{
+  //   const identifier = setTimeout(() => {    
+  //     console.log('hi'); // Runnuje se odmah na pocetku cim se komponenta renderuje i nakon svake promene u enteredPassword i enteredEmail.
+  //     setFormIsValid(
+  //     enteredEmail.includes('@') && enteredPassword.trim().length > 6
+  //   );}, 500)
 
-    return () => {
-      console.log("Clean Up"); // Runnuje se nakon svake promene u enteredPassword i enteredEmail.
-      clearTimeout(identifier);
-    }
+  //   return () => {
+  //     console.log("Clean Up"); // Runnuje se nakon svake promene u enteredPassword i enteredEmail.
+  //     clearTimeout(identifier);
+  //   }
 
-  }, [enteredEmail, enteredPassword])
+  // }, [enteredEmail, enteredPassword]);
 
   const emailChangeHandler = (event) => {
     setEnteredEmail(event.target.value);
-
-  
-  };
+    setFormIsValid(
+      event.target.value.includes('@') && enteredPassword.trim().length > 6
+    )
+  }
 
   const passwordChangeHandler = (event) => {
     setEnteredPassword(event.target.value);
