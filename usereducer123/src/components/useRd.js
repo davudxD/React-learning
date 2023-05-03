@@ -14,14 +14,14 @@ const counterReducer = (state, action) => {
 }
 
 
-const Counter =() => {
+const Counter = () => {
     const [count, dispatch] = useReducer(counterReducer, 0);
 
-    function handleIncrementClick() {
+    const handleIncrementClick = () => {
         dispatch({ type: 'INCREMENT' });
     }
 
-    function handleDecrementClick() {
+    const handleDecrementClick = () => {
         dispatch({ type: 'DECREMENT' });
     }
 
