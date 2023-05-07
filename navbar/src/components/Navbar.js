@@ -1,13 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Navbar.css'
 
 const Navbar = () => {
+    const [active, setActive] = useState("nav__menu");
+    const [togglerIcon, setTogglerIcon] = useState("nav__toggler");
+
+    const navToggleActivate = () => {
+        active === 'nav__menu' ? setActive('nav__menu nav__active') : setActive('nav__menu')
+        togglerIcon === 'nav__toggler' ? setTogglerIcon('nav__toggler toggle') : setTogglerIcon('nav__toggler')
+    }
+
     return (
         <nav className='nav'>
             <a href='#' className='nav__logo'>
                 Navbar
             </a>
-            <ul className='nav__menu'>
+            <ul className={active}>
                 <li>
                     <a href='#'>Home</a>
                 </li>
@@ -25,7 +33,7 @@ const Navbar = () => {
                 </li>
             </ul>
 
-            <div className='nav__toggler'>
+            <div onClick={navToggleActivate} className={togglerIcon}>
                 <div className='line1'></div>
                 <div className='line2'></div>
                 <div className='line3'></div>

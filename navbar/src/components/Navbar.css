@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Roboto:wght@400;700&display=swap');
+
 body{
-    font-size: 1.1rem;
+    font-size: 17.6px;
 }
 
 .nav{
@@ -12,6 +14,9 @@ body{
 
 .nav__logo{
     text-decoration: none;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+
 }
 
 .nav__menu{
@@ -26,6 +31,7 @@ body{
 .nav__menu a{
     text-decoration: none;
     padding-left: 20px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .nav__toggler div{
@@ -33,4 +39,47 @@ body{
     height: 2px;
     margin: 6px;
     background-color: black;
+}
+
+.nav__toggler{
+    cursor: pointer;
+    display: none;
+}
+
+
+@media screen and (max-width:768px) {
+    .nav__toggler{
+        display: block;
+    }
+
+    .nav__menu{
+        
+        position: fixed;
+        top: 7vh;
+        right: 0;
+        width: 50%;
+        height: 100vh;
+        background-color: lightgray;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        transform: translateX(100%);
+        transition: 0.5s ease-in;
+    }
+}
+
+.nav__active{
+    transform: translateX(0);
+}
+
+.toggle .line1{
+  transform: translateY(8px) rotate(45deg);
+}
+
+.toggle .line2{
+    opacity: 0;
+}
+
+.toggle .line3{
+  transform: translateY(-8px) rotate(-45deg);
 }
