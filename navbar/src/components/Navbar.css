@@ -5,16 +5,18 @@ body{
 }
 
 .nav{
-    background-color: lightgray;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    background-color: white;
     height: 8vh;
+      width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
 }
 
 .nav__logo{
     text-decoration: none;
-    color: white;
+    color: black;
     font-family: 'Roboto', sans-serif;
 
 }
@@ -47,6 +49,40 @@ body{
 }
 
 
+.nav__2{
+ display: flex;
+ align-items: center;
+ margin-right: 40px;
+  background-color: white;
+  height: 8vh;
+}
+
+.nav__line{
+  background-color: #ffc107;
+  height:1vh;
+  width: 100%;
+}
+
+.nav__number{
+  padding: 0 20px;
+  background-color: #040F2E;
+  color: white;
+  height:8vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul{
+  margin-right:100px;
+}
+
+ul li {
+    padding: 0 20px;
+    font-size: 17px;
+}
+
+
 @media screen and (max-width:768px) {
     .nav__toggler{
         display: block;
@@ -63,10 +99,20 @@ body{
         display: flex;
         justify-content: space-evenly;
         flex-direction: column;
-        transform: translateX(100%);
+        transform: translateX(130%);
         transition: 0.5s ease-in;
     }
 }
+
+
+@media screen and (max-width:1200px){
+    .nav__number{
+        display: none;
+    }
+
+}
+
+
 
 .nav__active{
     transform: translateX(0);
