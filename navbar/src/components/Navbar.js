@@ -10,36 +10,45 @@ const Navbar = () => {
         togglerIcon === 'nav__toggler' ? setTogglerIcon('nav__toggler toggle') : setTogglerIcon('nav__toggler')
     }
 
-    return (
+    return (<>
+        <div className='nav__line'></div>
         <nav className='nav'>
             <a href='#' className='nav__logo'>
                 Navbar
             </a>
-            <ul className={active}>
-                <li>
-                    <a href='#'>Home</a>
-                </li>
-                <li>
-                    <a href='#'>About</a>
-                </li>
-                <li>
-                    <a href='#'>Skills</a>
-                </li>
-                <li>
-                    <a href='#'>Portfolio</a>
-                </li>
-                <li>
-                    <a href='#'>Contact</a>
-                </li>
-            </ul>
 
-            <div onClick={navToggleActivate} className={togglerIcon}>
-                <div className='line1'></div>
-                <div className='line2'></div>
-                <div className='line3'></div>
+            <div className='nav__2'>
+                <ul className={active}>
+                    <li>
+                        <a href='#'>Home</a>
+                    </li>
+                    <li>
+                        <a href='#'>About</a>
+                    </li>
+                    <li>
+                        <a href='#'>Skills</a>
+                    </li>
+                    <li>
+                        <a href='#'>Portfolio</a>
+                    </li>
+                    <li>
+                        <a href='#'>Contact</a>
+                    </li>
+                </ul>
+
+
+                <div onClick={navToggleActivate} className={togglerIcon}>
+                    <div className='line1'></div>
+                    <div className='line2'></div>
+                    <div className='line3'></div>
+                </div>
+
+                <div>Call Us (+3810621530531)</div>
             </div>
+            
         </nav>
+    </>
     )
 }
 
-export default Navbar
+export default Navbar;
