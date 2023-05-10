@@ -13,7 +13,7 @@ const Navbar = () => {
     return (<>
         <div className='nav__line'></div>
         <nav className='nav'>
-            <a href='#' className='nav__logo' style={{width:400}}>
+            <a href='#' className='nav__logo' style={{ width: 400 }}>
                 Navbar
             </a>
 
@@ -45,7 +45,7 @@ const Navbar = () => {
 
                 <div className="nav__number" >Call Us (+3810621530531)</div>
             </div>
-            
+
         </nav>
     </>
     )
