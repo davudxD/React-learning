@@ -9,7 +9,10 @@ const App = () => {
 
   const getWeather = (event) => {
     if (event.key === "Enter") {
-      fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`).then(res => res.json()).then(data => setWeatherData(data));
+      fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`)
+      .then(res => res.json())
+      .then(data => {setWeatherData(data)
+      console.log(data);});
     }
   }
 
@@ -17,12 +20,24 @@ const App = () => {
   return (
     <div className='wrapper'>
       <input type="text"
-       onChange={e => setCity(e.target.value)}
+       onChange={e => {setCity(e.target.value)
+      console.log(e.target.value)}}
         placeholder='Enter your city'
          value={city}
          onKeyPress={getWeather} />
-      <p>City:</p>
-      <p>Temperatura:</p>
+         
+      
+      {typeof weatherData.main === "undefined" ? (
+         
+            <p>Enter city</p>
+      
+      ):(
+     <div>
+            <p>City: {weatherData.name}</p>
+            <p>Temperatura:{Math.round(weatherData.main.temp)}C</p>
+            <p>{weatherData.weather[0].main}</p>
+     </div>
+      )}
     </div>
   )
 }
