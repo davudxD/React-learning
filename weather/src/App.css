@@ -1,0 +1,28 @@
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:100vh
+}
+
+input::-webkit-input-placeholder {
+  padding-left: 20px;
+}
+
+.wrapper{
+  height: 500px;
+  width: 500px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+    flex-direction: column;
+  background-color: gray;
+  border-radius: 10px;
+}
+
+input{
+  height: 30px;
+  width: 400px;
+  border: 2px solid lightgray;
+  border-radius: 5px;
+}
