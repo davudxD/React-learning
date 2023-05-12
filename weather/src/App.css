@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+
+*{
+  font-family: 'Open Sans', sans-serif;;
+}
+
 body{
   display: flex;
   justify-content: center;
@@ -6,23 +12,29 @@ body{
 }
 
 input::-webkit-input-placeholder {
-  padding-left: 20px;
+  padding-left: 10px;
+  color: lightgray;
 }
 
 .wrapper{
-  height: 500px;
-  width: 500px;
+  height: 350px;
+  width: 300px;
   display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
+  align-items: center;
     flex-direction: column;
-  background-color: gray;
+  border: 2px solid gray;
   border-radius: 10px;
 }
 
 input{
+  margin-top: 20px;
   height: 30px;
-  width: 400px;
-  border: 2px solid lightgray;
-  border-radius: 5px;
+  width: 250px;
+  border: 1px solid lightgray;
+  
+}
+
+.enter_city{
+  margin-top: 50px;
+  
 }
