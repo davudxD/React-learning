@@ -6,9 +6,11 @@ function App() {
 const [count, setCount] = useState(5);
 const [theme, setTheme] = useState('green');
 
+const [word, setWord] = useState("");
+const [inputVal, setInputVal] = useState("WORD");
+
 const decrease = () =>{
   setCount(prevCount => prevCount-1)
-
 }
 
 
@@ -43,6 +45,15 @@ const expenses = [
     },
   ];
 
+const handleInputValue = (event) =>{
+setWord(event.target.value)
+}
+
+const handleButtonClick = () =>{
+setInputVal(word);
+setWord('')
+}
+
 return (
   <>
     <div className="main">
@@ -52,7 +63,9 @@ return (
       <button onClick={increase}>+</button>
     </div>
     <div className='card1'>
-      <Card ime={expenses[0].ime} prezime={expenses[0].prezime} />
+      <Card ime={expenses[0].ime} prezime={expenses[0].prezime} word = {inputVal} />
+      <input type="text" value={word} onChange={handleInputValue} />
+      <button onClick={handleButtonClick}>Click</button>
     </div>
   </>
 );

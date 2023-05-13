@@ -7,6 +7,7 @@ const Card = (props) => {
         <div className="kartica">
     <h1> {props.ime}</h1>
     <h2> {props.prezime}</h2>
+    <p>{props.word}</p>
     <p>Podaci:</p>
   </div>
     )

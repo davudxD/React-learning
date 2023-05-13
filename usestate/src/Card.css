@@ -7,4 +7,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+
+input{
+    margin-top: 20px;
+    height: 20px;
+}
+
+button{
+    margin-top:20px
 }
