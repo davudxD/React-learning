@@ -12,7 +12,6 @@ body{
 }
 
 input::-webkit-input-placeholder {
-  padding-left: 10px;
   color: lightgray;
 }
 
@@ -20,6 +19,7 @@ input::-webkit-input-placeholder {
   height: 350px;
   width: 300px;
   display: flex;
+  background-color: gray;
   align-items: center;
     flex-direction: column;
   border: 2px solid gray;
@@ -31,6 +31,7 @@ input{
   height: 30px;
   width: 250px;
   border: 1px solid lightgray;
+  padding-left: 10px;
   
 }
 
