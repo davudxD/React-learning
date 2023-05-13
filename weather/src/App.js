@@ -3,20 +3,25 @@ import './App.css'
 
 const App = () => {
 
-  const apiKey = "a080b798c61b52db50ff10b1fd8fb5ce";
+  
   const [weatherData, setWeatherData] = useState([{}]);
   const [city, setCity] = useState("");
   const [icon, setIcon] = useState("");
 
   const getWeather = (event) => {
     if (event.key === "Enter") {
-      fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&APPID=${apiKey}`)
+      fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&APPID=${process.env.REACT_APP_API_KEY}`)
         .then(res => res.json())
         .then(data => {
           setWeatherData(data)
           console.log(data);
         });
     }
+  }
+
+
+  const handleInput = (e) =>{
+    setCity(e.target.value)
   }
 
   const calculateCelsius = (fahrenheitTemp) => {
@@ -34,9 +39,7 @@ const App = () => {
   return (
     <div className='wrapper'>
       <input type="text"
-        onChange={e => {
-          setCity(e.target.value)
-        }}
+        onChange={handleInput}
         placeholder='Enter your city'
         value={city}
         onKeyPress={getWeather} />
@@ -47,7 +50,7 @@ const App = () => {
       ) : (
         <div>
           <p>City: {weatherData.name}</p>
-          <p>Temperatura: {Math.round(calculateCelsius(weatherData.main.temp))}C</p>
+            <p>Temperatura: {Math.round(calculateCelsius(weatherData.main.temp))}°C</p>
           <div><img src={icon} /></div>
           <p>{weatherData.weather[0].main}</p>
         </div>

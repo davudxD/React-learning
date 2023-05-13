@@ -6,8 +6,7 @@ function App() {
 const [count, setCount] = useState(5);
 const [theme, setTheme] = useState('green');
 
-const [word, setWord] = useState("");
-const [inputVal, setInputVal] = useState("WORD");
+
 
 const decrease = () =>{
   setCount(prevCount => prevCount-1)
@@ -45,8 +44,13 @@ const expenses = [
     },
   ];
 
-const handleInputValue = (event) =>{
-setWord(event.target.value)
+
+const [word, setWord] = useState("");
+const [inputVal, setInputVal] = useState("WORD");
+
+
+const handleInputValue = (e) =>{
+setWord(e.target.value)
 }
 
 const handleButtonClick = () =>{
