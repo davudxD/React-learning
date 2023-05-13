@@ -3,7 +3,7 @@ import './App.css'
 
 const App = () => {
 
-  const apiKey = "awdabwhvsehvbshevjsvbjs"; // Lazni key
+  const apiKey = "a080b798c61b52db50ff10b1fd8fb5ce";
   const [weatherData, setWeatherData] = useState([{}]);
   const [city, setCity] = useState("");
   const [icon, setIcon] = useState("");
