@@ -12,11 +12,11 @@ body{
 }
 
 input::-webkit-input-placeholder {
-  color: lightgray;
+  color: gray;
 }
 
 .wrapper{
-  height: 200px;
+  height: 230px;
   width: 300px;
   display: flex;
   background-color: white;
@@ -30,12 +30,20 @@ input{
   margin-top: 20px;
   height: 30px;
   width: 250px;
-  border: 1px solid lightgray;
+  border: 1px solid gray;
   padding-left: 10px;
   
 }
 
 .enter_city{
-  margin-top: 50px;
+  margin-top: 70px;
 
+}
+
+.results{
+  border: 1px solid black;
+  width: 250px;
+  margin-top:20px;
+  border-radius: 6px;
+  padding-left: 10px;
 }
