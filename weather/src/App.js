@@ -46,7 +46,7 @@ const App = () => {
 
 
       {typeof weatherData.main === "undefined" ? (
-        <p className='enter_city'>Enter city</p>
+        <p className='enter_city'>Enter city or country</p>
       ) : (
         <div>
           <p>City: {weatherData.name}</p>

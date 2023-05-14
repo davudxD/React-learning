@@ -16,13 +16,13 @@ input::-webkit-input-placeholder {
 }
 
 .wrapper{
-  height: 350px;
+  height: 200px;
   width: 300px;
   display: flex;
-  background-color: gray;
+  background-color: white;
   align-items: center;
     flex-direction: column;
-  border: 2px solid gray;
+  border: 1px solid black;
   border-radius: 10px;
 }
 
@@ -37,5 +37,5 @@ input{
 
 .enter_city{
   margin-top: 50px;
-  
+
 }
