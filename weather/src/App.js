@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import './App.css'
 
-const App = () => {
 
-  
+const App = () => {
   const [weatherData, setWeatherData] = useState([{}]);
   const [city, setCity] = useState("");
   // const [icon, setIcon] = useState("");
@@ -19,8 +18,6 @@ const App = () => {
         });
     }
   }
-
-
 
   const handleInput = (e) =>{
     setCity(e.target.value);

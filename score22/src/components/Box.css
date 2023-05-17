@@ -1,0 +1,35 @@
+.main__box {
+    height:  300px;
+    width: 500px;
+    background-color: lightgray;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.input__div{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
+
+    width: 300px
+}
+
+select{
+    height: 26px;
+}
+
+.input__div input{
+height: 20px;
+}
+
+.result__div{
+    height:150px;
+    width:400px;
+    border: 1px solid black;
+}
+
