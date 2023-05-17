@@ -1,53 +1,108 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import "./Box.css"
 
 const Box = () => {
 
-const[word, setNewWord] = useState("");
-// const[inputVal, setInputVal] = useState("");
-const[item,setItem] = useState([])
+  // --------------------------------------------------------------------------------------------------
+  // --------------------------------------------------------------------------------------------------
 
-const submitHandler = (e) =>{
-  if(e.key === "Enter") {
-  console.log(word)
-  setItem((oldItem) => [...oldItem, items]);
-   console.log(items);
-   setNewWord("")
- 
-}
-}
-const inputHandler = (e) =>{
-  setNewWord(e.target.value);
-}
+  const [word, setNewWord] = useState("");
+  const [item, setItem] = useState([]);
+  const[item2, setItem2] = useState([]);
 
-const items  = {
-  id: Math.floor(Math.random() * 10000 ),
-  value: word
-}
+  const submitHandler = (e) => {
+    if (e.key === "Enter") {
+      console.log(word)
+      setItem((oldItem) => [...oldItem, items]);
+      setItem2((newItem2) => [...newItem2, items2]);
+      console.log(items);
+      setNewWord("")
 
+    }
+  }
+  const inputHandler = (e) => {
+    setNewWord(e.target.value);
+  }
+
+  const items = {
+    id: Math.floor(Math.random() * 10000),
+    value: word
+  }
+
+  const items2 = {
+    id: Math.floor(Math.random() * 10000),
+    value: word
+  }
+
+  // --------------------------------------------------------------------------------------------------
+  // --------------------------------------------------------------------------------------------------
+
+  const [selectedOption, setSelectedOption] = useState("");
+
+  const handleSelectedOption = (e) => {
+    setSelectedOption(e.target.value);
+    console.log(selectedOption);
+  }
 
   return (
     <div className='main__box'>
-      <div className='input__div'>  
+      <div className='input__div'>
         <input type='text'
-        onChange={inputHandler}
-        value={word}
-        onKeyPress={submitHandler}
+          onChange={inputHandler}
+          value={word}
+          onKeyPress={submitHandler}
         />
-          <select>
-            <option value='' disabled >Select Team</option>
-            <option value='team1'>Team 1</option>
-            <option value='team2'>Team 2</option>
-          </select>
+        <select value={selectedOption} onChange={handleSelectedOption}>
+          <option value='' disabled >Select Team</option>
+          <option value='team1'>Team 1</option>
+          <option value='team2'>Team 2</option>
+        </select>
       </div>
       <div className='result__div'>
-        <ul>
-          {item.map((item) => {
-            return <li key={item.id}>{item.value}</li>
-          })}
-        </ul>
+        
+        <div>
+         {selectedOption === "team1" ? (
+          <ul>
+              {item.map((item) => {
+          return <li key={item.id}>{item.value}</li>
+        })}
+          </ul>
+         ) :(<p></p>)}
+        </div>
+
+        <div>
+          {selectedOption === "team2" ? (
+            <ul>
+              {item2.map((item) => {
+                return <li key={item.id}>{item.value}</li>
+              })}
+            </ul>
+          ) : (<p></p>)}
+        </div>
+
       </div>
     </div>
   )
 }
 export default Box
+
+
+
+// {
+//   selectedOption === "team1" ? (
+//     <div className='team1__side'>
+//       {<ul>
+//         {item.map((item) => {
+//           return <li key={item.id}>{item.value}</li>
+//         })}</ul>}
+//     </div>
+//   ) : (
+//   <div className='team2__side'>
+//     {
+//       <ul>
+//         {item.map((item) => {
+//           return <li key={item.id}>{item.value}</li>
+//         })}</ul>}
+//   </div>
+// )
+// }
