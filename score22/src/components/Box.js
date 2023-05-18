@@ -8,14 +8,20 @@ const Box = () => {
 
   const [word, setNewWord] = useState("");
   const [item, setItem] = useState([]);
-  const[item2, setItem2] = useState([]);
+  const [item2, setItem2] = useState([]);
 
   const submitHandler = (e) => {
     if (e.key === "Enter") {
-      console.log(word)
-      setItem((oldItem) => [...oldItem, items]);
-      setItem2((newItem2) => [...newItem2, items2]);
-      console.log(items);
+      console.log(word);
+      if(word === ""){
+        setItem([]);
+        setItem2([])
+      }
+      else{
+        setItem((oldItem) => [...oldItem, items]);
+        setItem2((newItem2) => [...newItem2, items2]);
+        console.log(items);
+      }
       setNewWord("")
 
     }
@@ -59,15 +65,15 @@ const Box = () => {
         </select>
       </div>
       <div className='result__div'>
-        
+
         <div>
-         {selectedOption === "team1" ? (
-          <ul>
+          {selectedOption === "team1" ? (
+            <ul>
               {item.map((item) => {
-          return <li key={item.id}>{item.value}</li>
-        })}
-          </ul>
-         ) :(<p></p>)}
+                return <li key={item.id}>{item.value}</li>
+              })}
+            </ul>
+          ) : (<p></p>)}
         </div>
 
         <div>
@@ -85,24 +91,3 @@ const Box = () => {
   )
 }
 export default Box
-
-
-
-// {
-//   selectedOption === "team1" ? (
-//     <div className='team1__side'>
-//       {<ul>
-//         {item.map((item) => {
-//           return <li key={item.id}>{item.value}</li>
-//         })}</ul>}
-//     </div>
-//   ) : (
-//   <div className='team2__side'>
-//     {
-//       <ul>
-//         {item.map((item) => {
-//           return <li key={item.id}>{item.value}</li>
-//         })}</ul>}
-//   </div>
-// )
-// }
