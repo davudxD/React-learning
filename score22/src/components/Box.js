@@ -6,26 +6,47 @@ const Box = () => {
   // --------------------------------------------------------------------------------------------------
   // --------------------------------------------------------------------------------------------------
 
+
+  
   const [word, setNewWord] = useState("");
   const [item, setItem] = useState([]);
   const [item2, setItem2] = useState([]);
 
+
+
   const submitHandler = (e) => {
     if (e.key === "Enter") {
       console.log(word);
-      if(word === ""){
+      if (selectedOption !== 'team1' && selectedOption !== 'team2') {
         setItem([]);
         setItem2([])
       }
-      else{
+      else {
         setItem((oldItem) => [...oldItem, items]);
         setItem2((newItem2) => [...newItem2, items2]);
+        emptyArr1();
+        emptyArr2();
         console.log(items);
+        console.log(items2);
       }
       setNewWord("")
-
     }
   }
+
+  const emptyArr1 = () => {
+    if (selectedOption === 'team1' || selectedOption !== 'team2') {
+      setItem2([]);
+    }
+  }
+
+
+  const emptyArr2 = () => {
+    if (selectedOption === "team2" || selectedOption !== 'team1') {
+      setItem([]);
+    }
+  }
+ 
+
   const inputHandler = (e) => {
     setNewWord(e.target.value);
   }
@@ -50,6 +71,9 @@ const Box = () => {
     console.log(selectedOption);
   }
 
+
+
+
   return (
     <div className='main__box'>
       <div className='input__div'>
@@ -57,6 +81,8 @@ const Box = () => {
           onChange={inputHandler}
           value={word}
           onKeyPress={submitHandler}
+          disabled={selectedOption !== "team1" && selectedOption !== "team2"}
+          placeholder = 'Enter team name'
         />
         <select value={selectedOption} onChange={handleSelectedOption}>
           <option value='' disabled >Select Team</option>
@@ -65,7 +91,7 @@ const Box = () => {
         </select>
       </div>
       <div className='result__div'>
-
+        
         <div>
           {selectedOption === "team1" ? (
             <ul>
