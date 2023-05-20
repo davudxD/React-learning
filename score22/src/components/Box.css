@@ -1,40 +1,67 @@
-.main__box {
-    height:  300px;
-    width: 500px;
-    background-color: lightgray;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
 
+*{
+  font-family: 'Open Sans', sans-serif;
+}
+
+body{
+    background-color: #004225;
+}
+
+.main__box {
+    height:  350px;
+    width: 500px;
+    background-color: #2e8b57;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .input__div{
     display: flex;
-    justify-content: space-between;
-    flex-direction: column;
+justify-content: center;
     flex-direction: row;
     align-items: center;
-
-    width: 300px
+    flex-direction: column;
+    width: 300px;
+    height:100px
 }
 
-select{
-    height: 26px;
+li {
+    padding: 5px;
+    margin: 10px;
+    list-style-type: none;
+    border: 1px solid black;
 }
 
 .input__div input{
-height: 20px;
+height: 25px;
+width: 200px;
+padding-left: 7px;
+
 }
+
+select {
+    margin-top: 20px;
+    text-align: center;
+    height: 26px;
+}
+
+/* ::placeholder{
+    padding-left: 7px;
+    
+} */
 
 .result__div{
     height:150px;
-    width:400px;
+    width:300px;
     border: 1px solid black;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
+    overflow: auto;
 }
 
 

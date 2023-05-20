@@ -21,6 +21,9 @@ const Box = () => {
         setItem([]);
         setItem2([])
       }
+      else if (word === "") {
+      return item, item2
+      }
       else {
         setItem((oldItem) => [...oldItem, items]);
         setItem2((newItem2) => [...newItem2, items2]);
