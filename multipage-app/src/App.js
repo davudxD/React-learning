@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
-import Home from './Home';
-import About from './About';
-import Contact from './Contact';
-import Projects from './Projects';
+import Home from './components/Home';
+import About from './components/About';
+import Contact from './components/Contact';
+import Projects from './components/Projects';
 import {BrowserRouter, Routes,Route,Link} from "react-router-dom"
 
 
