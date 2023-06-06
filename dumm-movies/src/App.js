@@ -9,6 +9,8 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
+
+  //GET
   const fetchMoviesHandler = useCallback(async () => {
     setIsLoading(true);
     setError(null);
@@ -25,6 +27,8 @@ function App() {
 
       const loadedMovies = [];
 
+
+       // Transformisanje podataka
       for(const key in data) {
          loadedMovies.push({
           id: key,
@@ -45,6 +49,8 @@ function App() {
     fetchMoviesHandler();
   }, [fetchMoviesHandler]);
 
+
+  // POST
   async function addMovieHandler(movie) {
  try {
    const res = await fetch('https://react-http-dummy-movies-63286-default-rtdb.europe-west1.firebasedatabase.app/movies.json', {
